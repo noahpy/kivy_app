@@ -1,0 +1,163 @@
+
+
+
+<LoginScreen>:
+    name: "login"
+
+    user:user
+    passw:passw
+    FloatLayout:
+        Label:
+            font_size:root.height*0.015+root.width*0.015
+            text:"Password:"
+            size_hint: 0.4,0.1
+            pos_hint:{"x":0.09,"y":0.5}
+        TextInput:
+            id:passw
+            font_size: root.height*0.02+root.width*0.005
+            multiline:False
+            size_hint: 0.4,0.05
+            pos_hint:{"x":0.5,"y":0.525}
+        Label:
+            font_size:root.height*0.015+root.width*0.015
+            text:"Email or Username:"
+            size_hint: 0.4,0.1
+            pos_hint:{"x":0.09,"y":0.7}
+        TextInput:
+            id:user
+            font_size: root.height*0.02+root.width*0.005
+            multiline:False
+            size_hint: 0.4,0.05
+            pos_hint:{"x":0.5,"y":0.725}
+        Button:
+            font_size:root.height*0.0175+root.width*0.0175
+            text: "Login"
+            pos_hint:{"x":0.3,"y":0.25}
+            size_hint: 0.45, 0.075
+            on_release:
+                root.manager.transition.direction = "up"
+                root.login_btn()
+        Button:
+            background_color: 1,1,0,1
+            font_size:root.width*0.011+root.height*0.011
+            text: "Create a new account"
+            pos_hint:{"x":0.35,"y":0.15}
+            size_hint: 0.35, 0.05
+            on_release:
+                root.manager.transition.direction = "right"
+                root.new_btn()
+
+
+<RegisterScreen>:
+    name: "register"
+
+    username:username
+    email:email
+    passw:passw
+    name_error:name_error
+    email_error:email_error
+    passw_error:passw_error
+    reg_button:reg_button
+    FloatLayout:
+        Label:
+            font_size:root.height*0.015+root.width*0.015
+            text:"Password"
+            size_hint: 0.4,0.1
+            pos_hint:{"x":0.09,"y":0.4}
+        TextInput:
+            id:passw
+            font_size: root.height*0.02+root.width*0.005
+            multiline:False
+            size_hint: 0.4,0.05
+            pos_hint:{"x":0.5,"y":0.425}
+        Label:
+            id:passw_error
+            color: 1,0,0,1
+            font_size: root.height*0.01+root.width*0.01
+            text:""
+            size_hint: 0.4,0.1
+            pos_hint:{"x":0.5,"y":0.35}
+        Label:
+            font_size:root.height*0.015+root.width*0.015
+            text:"Your Email"
+            size_hint: 0.4,0.1
+            pos_hint:{"x":0.09,"y":0.6}
+        TextInput:
+            id:email
+            font_size: root.height*0.02+root.width*0.005
+            multiline:False
+            size_hint: 0.4,0.05
+            pos_hint:{"x":0.5,"y":0.625}
+        Label:
+            id:email_error
+            color: 1,0,0,1
+            font_size: root.height*0.01+root.width*0.01
+            text:""
+            size_hint: 0.4,0.1
+            pos_hint:{"x":0.5,"y":0.55}
+        Label:
+            font_size:root.height*0.015+root.width*0.015
+            text:"Your Username"
+            size_hint: 0.4,0.1
+            pos_hint:{"x":0.09,"y":0.8}
+        TextInput:
+            id:username
+            font_size: root.height*0.02+root.width*0.005
+            multiline:False
+            size_hint: 0.4,0.05
+            pos_hint:{"x":0.5,"y":0.825}
+        Label:
+            id:name_error
+            color: 1,0,0,1
+            font_size: root.height*0.01+root.width*0.01
+            text:""
+            size_hint: 0.4,0.1
+            pos_hint:{"x":0.5,"y":0.75}
+        Button:
+            id: reg_button
+            font_size:root.height*0.0175+root.width*0.0175
+            background_color: 0.9,0.9,0.9,1
+            text: "Go back to login"
+            pos_hint:{"x":0.2,"y":0.15}
+            size_hint: 0.6, 0.075
+            on_release:
+                root.manager.transition.direction = "left"
+                root.register_btn()
+
+
+
+<MainScreen>:
+    name: "main"
+    n: n
+    email: email
+    created:created
+    FloatLayout:
+        Label:
+            id: n
+            font_size:root.height*0.0175+root.width*0.0175
+            pos_hint:{"x": 0.1, "top":0.9}
+            size_hint:0.8, 0.2
+            text: "Account Name: "
+
+        Label:
+            id: email
+            font_size:root.height*0.0175+root.width*0.0175
+            pos_hint:{"x": 0.1, "top":0.7}
+            size_hint:0.8, 0.2
+            text: "Email: "
+
+        Label:
+            id: created
+            font_size:root.height*0.0175+root.width*0.0175
+            pos_hint:{"x": 0.1, "top":0.5}
+            size_hint:0.8, 0.2
+            text: "Created: "
+        Button:
+            font_size:root.height*0.0175+root.width*0.0175
+            text: "Exit"
+            pos_hint:{"x":0.3,"y":0.1}
+            size_hint: 0.4, 0.075
+            on_release:
+                root.manager.transition.direction = "down"
+                root.exit_btn()
+
