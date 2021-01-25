@@ -203,7 +203,6 @@ class MainScreen(Screen):
                     rest_data.append(user_dic[current_user[0]][i])
             if len(rest_data)>0:
                 user_dic[current_user[0]]=rest_data
-                print("!")
             else:
                 user_dic.pop(current_user[0])
             user_dic[value.text]=[user_data]
