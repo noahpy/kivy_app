@@ -20,4 +20,8 @@ buildozer android debug deploy OR: buildozer android debug deploy run
 If SSL-Error:
 sudo apt-get install libssl-dev
 
+! Don't forget to change your buildozer.spec file
 
+requirements = python3,kivy,datetime,pickle-mixin
+source.include_exts = py,png,jpg,kv,atlas,txt
+turnon logcat_filter
